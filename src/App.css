@@ -1,104 +1,103 @@
-/* 共通設定 */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-}
-
-/* アプリの中央配置用コンテナ */
-.app-container {
-  max-width: 800px;
+.App {
+  width: 100%;
   margin: 0 auto;
   padding: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
-/* 入力ボックスエリア */
+/* 追加エリア */
 .input-area {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
-  background-color: #383b27;
+  background-color: #cef00d;
   padding: 12px;
   border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/* ToDo入力エリアとボタン */
+.input-controls {
+  display: flex;
+  flex: 1;
+  gap: 8px;
 }
 
 .input-area input {
   flex: 1;
-  min-width: 150px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #168512;
 }
 
-.input-area button {
+.input-area button.add-button {
   padding: 10px 16px;
-  background-color: #daf31c;
+  background-color: #ebf1b8;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-}
-
-/* ToDoセクション共通 */
-.todo-section {
-  margin-top: 16px;
-  padding: 16px;
-  border-radius: 10px;
-  border: 1px solid #bcd;
-}
-
-.incomplete-area {
-  background-color: #ffffff;
-}
-
-.complete-area {
-  background-color: #cfe5e5;
 }
 
 /* ログアウトボタン */
+.logout-container {
+  margin-top: 32px;
+  padding-left: 8px;
+}
+
 .logout-button {
-  float: right;
+  padding: 10px 16px;
   background-color: #f87171;
   color: white;
-  padding: 10px 16px;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-/* ToDoアイテムの並び */
-.list-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 0;
+/* 共通ToDo枠 */
+.incomplete-area,
+.complete-area {
+  width: 100%;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 2px solid #aacfd0;
 }
 
-.todo-item {
-  flex: 1;
+.complete-area {
+  background-color: #c9dede;
 }
 
-/* モバイル対応 */
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+/* レスポンシブ */
 @media (max-width: 600px) {
   .input-area {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .input-controls {
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .logout-container {
+    justify-content: flex-start;
   }
 
   .logout-button {
-    float: none;
-    width: 100%;
-    margin-top: 16px;
-  }
-
-  .list-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .list-row button {
-    margin-top: 8px;
+    width: auto;
   }
 }
