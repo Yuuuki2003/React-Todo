@@ -60,26 +60,6 @@ export const Todo = ({ user }) => {
 
   return (
     <>
-      <button
-        onClick={async () => {
-          await supabase.auth.signOut();
-          window.location.reload();
-        }}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          padding: '8px 16px',
-          backgroundColor: '#f87171',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
-      >
-        ログアウト
-      </button>
-
       <InputTodo
         todoText={todoText}
         onChange={onChangeTodoText}
@@ -114,6 +94,19 @@ export const Todo = ({ user }) => {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* 左下固定のログアウトボタン */}
+      <div className="logout-container">
+        <button
+          className="logout-button"
+          onClick={async () => {
+            await supabase.auth.signOut();
+            window.location.reload();
+          }}
+        >
+          ログアウト
+        </button>
       </div>
     </>
   );
