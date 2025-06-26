@@ -1,76 +1,66 @@
-body{
-    font-family:sans-serif;
+body {
+    font-family: sans-serif;
     color: #666;
 }
 
-input{
+input {
     border-radius: 8px;
-    /*枠を外す*/
     border: none;
     padding: 6px 16px;
-
 }
 
-button{
+button {
     border-radius: 8px;
     border: none;
     padding: 4px 16px;
     margin: 0px 2px;
 }
 
-/*ボタンの上にカーソルがきたときの処理⇒ホバー*/
-button:hover{
+button:hover {
     background-color: rgb(161, 157, 160);
     color: #fff;
-    /*カーソルが矢印から指に変わる*/
     cursor: pointer;
 }
 
-.input-area{
-    background-color:#cef32b;
-    width:400px;
-    height:30px;
-    padding:8px;
-    margin:8px;
-    /*角を丸くする*/
+.input-area,
+.incomplete-area,
+.complete-area {
+    width: 100%;
+    max-width: 600px;
+    margin: 8px auto;
+    box-sizing: border-box;
     border-radius: 8px;
+    padding: 8px;
 }
 
-.incomplete-area{
+/* 色・背景だけ個別で指定 */
+.input-area {
+    background-color: #cef32b;
+    height: auto;
+}
+
+.incomplete-area {
     border: 2px solid #aacfd0;
-    width: 400px;
-    /*最低限の高さを保証し、それを超えたら動的に対応*/
     min-height: 200px;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 8px;
 }
 
-.complete-area{
-   border: 2px solid #aacfd0;
-    width: 400px;
-    /*最低限の高さを保証し、それを超えたら動的に対応*/
+.complete-area {
+    border: 2px solid #aacfd0;
     min-height: 200px;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 8px;  
     background-color: #c9dede;
 }
 
-.title{
-    /*文字を中央寄せにする*/
+.title {
     text-align: center;
     margin-top: 0px;
-    /*文字の太さを変える*/
     font-weight: bold;
 }
 
-.list-row{
-    /*フレックスボックスを用いてリストを横並びにする*/
+.list-row {
     display: flex;
     align-items: center;
 }
 
-.todo-item{
+.todo-item {
     margin: 6px;
 }
