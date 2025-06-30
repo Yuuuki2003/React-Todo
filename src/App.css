@@ -1,5 +1,6 @@
 .App {
   width: 100%;
+  max-width: 600px;
   margin: 0 auto;
   padding: 16px;
   font-family: 'Segoe UI', sans-serif;
@@ -7,23 +8,22 @@
   box-sizing: border-box;
 }
 
-/* 追加エリア */
+/* 入力エリア */
 .input-area {
+  width: 100%;
   display: flex;
-  gap: 8px;
+  justify-content: center;
   margin-bottom: 16px;
   background-color: #cef00d;
   padding: 12px;
   border-radius: 10px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  box-sizing: border-box;
 }
 
-/* ToDo入力エリアとボタン */
+/* 入力欄＋追加ボタン */
 .input-controls {
   display: flex;
-  flex: 1;
+  width: 100%;
   gap: 8px;
 }
 
@@ -60,7 +60,7 @@
   white-space: nowrap;
 }
 
-/* 共通ToDo枠 */
+/* 共通のToDo表示エリア */
 .incomplete-area,
 .complete-area {
   width: 100%;
@@ -81,7 +81,7 @@
   margin-top: 0;
 }
 
-/* レスポンシブ */
+/* スマホ対応 */
 @media (max-width: 600px) {
   .input-area {
     flex-wrap: nowrap;
