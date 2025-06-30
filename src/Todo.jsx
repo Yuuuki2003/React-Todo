@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { InputTodo } from './components/InputTodo';
+import { TodoList } from './components/TodoList';
 import { supabase } from './lib/supabaseClient';
 
 export const Todo = ({ user }) => {
@@ -29,7 +30,7 @@ export const Todo = ({ user }) => {
   const onChangeTodoText = (e) => setTodoText(e.target.value);
 
   const onClickAdd = async () => {
-    if (todoText === '') return;
+    if (!todoText) return;
     const { error } = await supabase.from('todos').insert([
       {
         title: todoText,
@@ -66,37 +67,19 @@ export const Todo = ({ user }) => {
         onClick={onClickAdd}
       />
 
-      <div className="incomplete-area">
-        <p className="title">未完了のToDo</p>
-        <ul>
-          {incompleteTodos.map((todo) => (
-            <li key={todo.id}>
-              <div className="list-row">
-                <p className="todo-item">{todo.title}</p>
-                <button onClick={() => onClickComplete(todo.id)}>完了</button>
-                <button onClick={() => onClickDelete(todo.id)}>削除</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <TodoList
+        title="未完了のToDo"
+        todos={incompleteTodos}
+        onComplete={onClickComplete}
+        onDelete={onClickDelete}
+      />
+      <TodoList
+        title="完了のToDo"
+        todos={completeTodos}
+        onBack={onClickBack}
+        onDelete={onClickDelete}
+      />
 
-      <div className="complete-area">
-        <p className="title">完了のToDo</p>
-        <ul>
-          {completeTodos.map((todo) => (
-            <li key={todo.id}>
-              <div className="list-row">
-                <p className="todo-item">{todo.title}</p>
-                <button onClick={() => onClickBack(todo.id)}>戻す</button>
-                <button onClick={() => onClickDelete(todo.id)}>削除</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* 左下固定のログアウトボタン */}
       <div className="logout-container">
         <button
           className="logout-button"
