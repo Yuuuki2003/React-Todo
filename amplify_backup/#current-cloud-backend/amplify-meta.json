@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reacttodo-dev-776f1-authRole",
+      "UnauthRoleArn": "arn:aws:iam::108609831775:role/amplify-reacttodo-dev-776f1-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::108609831775:role/amplify-reacttodo-dev-776f1-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-reacttodo-dev-776f1-deployment",
+      "UnauthRoleName": "amplify-reacttodo-dev-776f1-unauthRole",
+      "StackName": "amplify-reacttodo-dev-776f1",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:108609831775:stack/amplify-reacttodo-dev-776f1/374d8e80-5c64-11f0-90d7-06ac47e4fb6f",
+      "AmplifyAppId": "dyzldam3jpwyf"
+    }
+  },
+  "auth": {
+    "reacttodo0402b87a": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reacttodo-dev-776f1-deployment/amplify-cfn-templates/auth/reacttodo0402b87a-cloudformation-template.json",
+        "logicalId": "authreacttodo0402b87a"
+      },
+      "lastPushTimeStamp": "2025-07-09T01:38:58.640Z",
+      "output": {
+        "UserPoolId": "ap-northeast-1_STP8rnBTa",
+        "AppClientIDWeb": "3krf00k932504fgvgutuavq4cs",
+        "AppClientID": "6v9q2no0glbeai8ek3g1raqbc2",
+        "IdentityPoolId": "ap-northeast-1:c98994da-759a-4fe9-a5b6-de1649436d8d",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-northeast-1:108609831775:userpool/ap-northeast-1_STP8rnBTa",
+        "IdentityPoolName": "reacttodo0402b87a_identitypool_0402b87a__dev",
+        "UserPoolName": "reacttodo0402b87a_userpool_0402b87a"
+      },
+      "lastPushDirHash": "FyaJIqd11v6KdDr94s3Zw/W9TrQ="
+    }
+  }
+}

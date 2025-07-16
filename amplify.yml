@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 20
+        - nvm use 20
         - npm ci
     build:
       commands:
@@ -13,7 +15,7 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**
-
+      - node_modules/**/*
 env:
   runtime: nodejs20.x
+
