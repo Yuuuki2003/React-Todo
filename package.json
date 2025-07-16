@@ -1,28 +1,24 @@
 {
   "name": "react-todo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "このアプリは Supabase を使った認証付きの ToDo 管理アプリです。",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.0",
+    "@aws-amplify/auth": "^6.13.3",
+    "aws-amplify": "^6.15.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react-swc": "^3.9.0",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.3.5"
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "vite": "^7.0.3"
   }
 }
