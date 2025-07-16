@@ -30,6 +30,8 @@ build/
 
 # Amplify backend — completely excluded for hosting-only deploy
 amplify/
+!amplify/amplify.yml
+
 #amplify-do-not-edit-begin
 amplify/#current-cloud-backend
 amplify/.config/local-*
@@ -50,3 +52,4 @@ amplifytools.xcconfig
 # Secrets and samples
 .secret-*
 **.sample
+
