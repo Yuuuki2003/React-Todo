@@ -24,6 +24,9 @@ dist-ssr
 *.sw?
 .env
 
+# Ignore Amplify backend entirely
+amplify/
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
