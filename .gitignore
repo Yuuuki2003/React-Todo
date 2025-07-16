@@ -30,9 +30,8 @@ build/
 
 # Amplify backend — completely excluded for hosting-only deploy
 amplify/
-
 #amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
+amplify/#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
 amplify/mock-data
