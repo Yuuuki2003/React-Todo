@@ -1,32 +1,21 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { supabase } from './lib/supabaseClient';
-import { Login } from './Login';
-import { Todo } from './Todo';
+import { getCurrentUser } from '@aws-amplify/auth';
+import { DynamoTodo } from './dynamo/DynamoTodo';
+import { Login } from './components/Login';
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // ログイン中のユーザーを取得
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user);
-    });
-
-    // 認証状態の変化を監視
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    // クリーンアップ
-    return () => {
-      listener.subscription.unsubscribe();
-    };
+    getCurrentUser()
+      .then(setUser)
+      .catch(() => setUser(null));
   }, []);
 
   return (
     <div className="App">
-      {user ? <Todo user={user} /> : <Login />}
+      {user ? <DynamoTodo user={user} /> : <Login onLogin={setUser} />}
     </div>
   );
 }
