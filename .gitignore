@@ -30,6 +30,15 @@ build/
 
 # Amplify backend — completely excluded for hosting-only deploy
 amplify/
+!amplify/amplify.yml
+
+# Allow aws-exports.js for Amplify Auth config
+!src/aws-exports.js
+
+# Secrets and samples
+.secret-*
+**.sample
+
 #amplify-do-not-edit-begin
 amplify/#current-cloud-backend
 amplify/.config/local-*
@@ -46,7 +55,3 @@ amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
 #amplify-do-not-edit-end
-
-# Secrets and samples
-.secret-*
-**.sample

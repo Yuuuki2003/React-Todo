@@ -15,7 +15,6 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules/**
 env:
   runtime: nodejs20.x
-
