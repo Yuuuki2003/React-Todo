@@ -13,9 +13,17 @@ function App() {
       .catch(() => setUser(null));
   }, []);
 
+  const appClass = user ? 'App' : 'App App--center';
+
   return (
-    <div className="App">
-      {user ? <DynamoTodo user={user} /> : <Login onLogin={setUser} />}
+    <div className={appClass}>
+      {user ? (
+        <DynamoTodo user={user} />
+      ) : (
+        <div className="login-card">
+          <Login onLogin={setUser} />
+        </div>
+      )}
     </div>
   );
 }
