@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Amplify } from 'aws-amplify';
-import amplifyconfig from './amplifyconfiguration.json';
+import awsmobile from './aws-exports';
 import App from './App.jsx';
 
-Amplify.configure(amplifyconfig);
+Amplify.configure(awsmobile);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
