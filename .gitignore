@@ -56,3 +56,11 @@ amplify/backend/.temp
 
 # Allow this for frontend Auth integration
 !src/aws-exports.js
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
