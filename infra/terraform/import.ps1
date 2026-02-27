@@ -11,7 +11,7 @@ param(
   [string]$TodoTableName = "todos",
   [string]$TodoLambdaRoleName = "reacttodoLambdaRole6cc17f6e-dev",
   [string]$TodoLambdaFunctionName = "reactTodoApi-dev",
-  [string]$TodoApiId = "3nwhuyy8k3",
+  [string]$TodoApiId = "bj7lj8jhf4",
   [string]$TodoApiStageName = "dev",
   [string]$TodoApiDeploymentId = "u2cc5w",
 
@@ -30,7 +30,12 @@ function Import-IfMissing {
     [Parameter(Mandatory = $true)][string]$Id
   )
 
-  $stateEntries = terraform state list 2>$null
+  try {
+    $stateEntries = terraform state list 2>$null
+  } catch {
+    # First run has no state file yet; treat as empty and continue imports.
+    $stateEntries = @()
+  }
   if ($stateEntries -contains $Address) {
     Write-Host "Skip import (already in state): $Address"
     return

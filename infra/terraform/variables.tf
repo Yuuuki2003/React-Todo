@@ -73,7 +73,7 @@ variable "dev_tags" {
 variable "todo_api_id" {
   description = "Existing API Gateway REST API ID"
   type        = string
-  default     = "3nwhuyy8k3"
+  default     = "bj7lj8jhf4"
 }
 
 variable "todo_api_name" {
@@ -176,7 +176,7 @@ variable "amplify_app_environment_variables" {
   description = "Environment variables configured on Amplify app"
   type        = map(string)
   default = {
-    "VITE_API_BASE" = "https://3nwhuyy8k3.execute-api.ap-northeast-1.amazonaws.com/dev"
+    "VITE_API_BASE" = "https://bj7lj8jhf4.execute-api.ap-northeast-1.amazonaws.com/dev"
     "_LIVE_UPDATES" = "[{\"name\":\"Amplify CLI\",\"pkg\":\"@aws-amplify/cli\",\"type\":\"npm\",\"version\":\"latest\"}]"
   }
 }
