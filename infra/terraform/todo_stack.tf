@@ -110,6 +110,7 @@ resource "aws_iam_role_policy" "todo_lambda_dynamodb" {
       {
         Effect = "Allow"
         Action = [
+          "dynamodb:GetItem",
           "dynamodb:PutItem",
           "dynamodb:UpdateItem",
           "dynamodb:DeleteItem",
@@ -146,8 +147,9 @@ resource "aws_lambda_function" "todo_api" {
 
   environment {
     variables = {
-      ENV    = var.todo_env_name
-      REGION = var.aws_region
+      ENV             = var.todo_env_name
+      REGION          = var.aws_region
+      TODO_TABLE_NAME = var.todo_table_name
     }
   }
 
